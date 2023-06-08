@@ -24,11 +24,12 @@ struct ContentView: View {
                     }) {
                         Image(systemName: "slider.horizontal.3")
                     }
+                    .sheet(isPresented: $isShowingSettings) {
+                        SettingsView()
+                    }
             )
-            .sheet(isPresented: $isShowingSettings) {
-                SettingsView()
-            }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
